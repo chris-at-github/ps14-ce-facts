@@ -1,0 +1,39 @@
+tt_content {
+	ce_facts =< lib.contentElement
+	ce_facts {
+		templateName = Facts.html
+		layoutRootPaths {
+			50 = EXT:ce_facts/Resources/Private/Layouts/
+		}
+
+		templateRootPaths {
+			50 = EXT:ce_facts/Resources/Private/Templates/
+		}
+
+		partialRootPaths {
+			50 = EXT:ce_facts/Resources/Private/Partials/
+		}
+
+		dataProcessing {
+			30 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+			30 {
+				as = elements
+				table = tx_xo_domain_model_elements
+				pidInList.field = pid
+				where {
+					data = field:uid
+					intval = 1
+					wrap = tx_xo_content=|
+				}
+				orderBy = sorting
+			}
+
+			120 = Ps14\CeFacts\DataProcessing\ModuleProcessor
+		}
+	}
+
+#	xo_hero_slider =< tt_content.xo_slider
+#	xo_hero_slider {
+#		templateName = HeroSlider.html
+#	}
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2021-05-05T06:25:54Z" product-name="ce_facts">
+		<header/>
+		<body>
+			<trans-unit id="tx_ce_facts.title">
+				<source>Facts</source>
+			</trans-unit>
+			<trans-unit id="tx_ce_facts.description">
+				<source>Facts Modul</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
