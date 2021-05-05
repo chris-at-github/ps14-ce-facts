@@ -9,6 +9,13 @@
 			<trans-unit id="tx_ce_facts.description">
 				<source>Facts Modul</source>
 			</trans-unit>
+
+			<trans-unit id="tx_xo_domain_model_elements.record_type.default">
+				<source>Fact</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_domain_model_elements.description">
+				<source>Number</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

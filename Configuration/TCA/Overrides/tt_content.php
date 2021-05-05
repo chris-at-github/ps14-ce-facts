@@ -26,25 +26,37 @@ $GLOBALS['TCA']['tt_content']['types']['ce_facts'] = [
 	',
 ];
 
-//$GLOBALS['TCA']['tt_content']['types']['ce_hero']['columnsOverrides']['bodytext']['config'] = [
-//	'enableRichtext' => true,
-//	'richtextConfiguration' => 'xoDefault',
-//];
-//
-//$GLOBALS['TCA']['tt_content']['types']['ce_hero']['columnsOverrides']['image']['config'] = [
-//	'maxitems' => 1,
-//];
+$GLOBALS['TCA']['tt_content']['types']['ce_facts']['columnsOverrides']['bodytext']['config'] = [
+	'enableRichtext' => true,
+	'richtextConfiguration' => 'xoDefault',
+];
 
-// ---------------------------------------------------------------------------------------------------------------------
-// Hero Slider
-//\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
-//	array(
-//		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_hero_slider.title',
-//		'xo_hero_slider',
-//		'content-textpic'
-//	),
-//	'CType',
-//	'xo_hero_slider'
-//);
-//
-//$GLOBALS['TCA']['tt_content']['types']['xo_hero_slider'] = $GLOBALS['TCA']['tt_content']['types']['xo_slider'];
+$GLOBALS['TCA']['tt_content']['types']['ce_facts']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca'] = [
+	'columns' => [
+		'record_type' => [
+			'config' => [
+				'items' => [
+					['LLL:EXT:ce_facts/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.record_type.default', 'facts_default'],
+				],
+				'default' => 'facts_default'
+			]
+		],
+		'description' => [
+			'label' => 'LLL:EXT:ce_facts/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.description',
+			'config' => [
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim,required',
+			]
+		],
+	],
+	'types' => [
+		'facts_default' => [
+			'showitem' => '
+				l10n_diffsource, record_type, --palette--;;header, description,
+				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+				--palette--;;visibility,
+				--palette--;;access',
+		],
+	]
+];
