@@ -8,13 +8,83 @@
 // ---------------------------------------------------------------------------------------------------------------------
 // Variablen
 $ce-facts--use-css: true !default;
+$ce-facts--layout-inline: true !default;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // CSS
 @if($ce-facts--use-css) {
 
+	// -------------------------------------------------------------------------------------------------------------------
+	// Component
+	.fact {
+		.fact--number {
+			font-size: rem(34px);
+			line-height: 1;
+		}
+
+		.fact--title {
+			&, a, h1, h2, h3, h4, h5, h6 {
+				margin: rem(3px 0 0 0);
+				line-height: 1.4;
+				font-size: rem(20px);
+				font-weight: $font-weight-bold;
+				color: $font-color-base;
+			}
+
+			h1, h2, h3, h4, h5, h6 {
+				margin: 0;
+			}
+		}
+	}
+
+	.facts--container {
+		@include list-unstyled();
+	}
+
+	// -------------------------------------------------------------------------------------------------------------------
+	// Modul
+	.ce-facts {
+		.facts--container {
+			@include make-row();
+		}
+
+		.fact {
+			@include make-col-ready();
+			margin-top: $spacing-default;
+		}
+	}
+
+	// -------------------------------------------------------------------------------------------------------------------
+	// >= 576px
+	@include media-breakpoint-up(sm) {
+		@if($ce-facts--layout-inline) {
+			.ce-facts--inline {
+				.fact {
+					width: auto;
+					max-width: rem(275px);
+					margin-right: $spacing-default;
+				}
+			}
+		}
+	}
+
+	// -------------------------------------------------------------------------------------------------------------------
+	// >= 768px
+	@include media-breakpoint-up(md) {
+		.fact {
+			.fact--number {
+				font-size: rem(48px);
+			}
+		}
+
+		.ce-facts {
+			.fact {
+				margin-top: rem(40px);
+			}
+		}
+	}
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
 // XNA Override
-@import '../../../../xna/Resources/Public/Sass/xna/modules/hero';
+@import '../../../../xna/Resources/Public/Sass/xna/modules/facts';

@@ -23,6 +23,10 @@ class ModuleProcessor extends \Ps\Xo\DataProcessing\ModuleProcessor implements D
 	 * @return array the processed data as key/value store
 	 */
 	public function process(ContentObjectRenderer $contentObject, array $contentObjectConfiguration, array $processorConfiguration, array $processedData) {
+
+		// Dummy-Setting bis es mehr Optionen gibt
+		$processedData['data']['frame_classes'] .= ' ce-facts--inline';
+
 		return $processedData;
 	}
 }
