@@ -2,7 +2,9 @@
 <f:layout name="Default" />
 	<f:section name="Main">
 		<f:spaceless>
-			<f:debug>{_all}</f:debug>
+			<f:if condition="{elements}">
+				<f:render partial="Listing" section="Main" arguments="{_all}" />
+			</f:if>
 		</f:spaceless>
 	</f:section>
 </html>
