@@ -4,14 +4,17 @@ tt_content {
 		templateName = Facts.html
 		layoutRootPaths {
 			10 = EXT:ce_facts/Resources/Private/Layouts/
+			20 = EXT:xna/Resources/Private/Extensions/CeFacts/Layouts/
 		}
 
 		templateRootPaths {
 			10 = EXT:ce_facts/Resources/Private/Templates/
+			20 = EXT:xna/Resources/Private/Extensions/CeFacts/Templates/
 		}
 
 		partialRootPaths {
 			10 = EXT:ce_facts/Resources/Private/Partials/
+			20 = EXT:xna/Resources/Private/Extensions/CeFacts/Partials/
 		}
 
 		dataProcessing {
